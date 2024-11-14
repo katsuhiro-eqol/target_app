@@ -29,21 +29,21 @@ struct ForgetPassword: View {
         .frame(width : width*0.85, height : height*0.4)
         Text("パスワードリセットのメールを送信します")
         Button(action: {
-                        print("button tapped")
-                    }){
-                        Text("パスワードリセット")
-                            .font(.system(size: 25, weight: .semibold, design: .rounded))
-                            .foregroundColor(.gray)
-                            .padding()
-                            .background(
-                                RoundedRectangle(cornerRadius: 20)
-                                    .foregroundStyle(bgColor)
-                            )
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 30)
-                                    .stroke(.gray, lineWidth: 0)
-                            )
-                    }
+            print("button tapped")
+        }){
+            Text("パスワードリセット")
+                .font(.system(size: 25, weight: .semibold, design: .rounded))
+                .foregroundColor(.gray)
+                .padding()
+                .background(
+                    RoundedRectangle(cornerRadius: 20)
+                        .foregroundStyle(bgColor)
+                )
+                .overlay(
+                    RoundedRectangle(cornerRadius: 30)
+                        .stroke(.gray, lineWidth: 0)
+                )
+        }
         Spacer()
         Button("ログイン画面に戻る") {
             //
