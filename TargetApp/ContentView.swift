@@ -7,28 +7,34 @@
 
 import SwiftUI
 
+let bounds = UIScreen.main.bounds
+let width = bounds.width
+let height = bounds.height
+
 struct ContentView: View {
-    @State var text = "new app"
+    @State private var input:String = ""
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text(text)
+            Text("メッセージを入力してください")
+            TextEditor(text: $input)
+                .frame(width : 300.0, height : 200.0)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 5)
+                    .stroke(Color.blue, lineWidth: 1)
+                )
+                .autocorrectionDisabled()
+                .onSubmit() {
+                    print("return")
+                }
             Spacer()
-            Button(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/) {
+            Button("送信") {
                 postData()
             }
         }
         .padding()
-    }
-}
-
-func changeText(text:String)->String{
-    if (text == "new app"){
-        return "second app"
-    } else {
-        return "new app"
     }
 }
 
